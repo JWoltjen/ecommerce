@@ -5,7 +5,7 @@ import { Badge } from '@material-ui/core'
 import { ShoppingCartOutlined } from '@material-ui/icons'
 const Container = styled.div`
     height: 60px; 
-
+    margin-bottom: 2rem; 
 `
 
 const Wrapper = styled.div`
@@ -16,10 +16,10 @@ const Wrapper = styled.div`
 `
 
 const Left = styled.div`
+    flex: 1;
     display: flex; 
     align-items: center; 
-
-    flex: 1;
+    
 `
 
 const Language = styled.span`
