@@ -14,21 +14,32 @@ const Wrapper = styled.div`
 `
 
 const Left = styled.div`
-    width: 33.3%; 
+    flex: 1;
 `
+
+const Language = styled.span`
+    font-size: 14px; 
+    cursor: pointer; 
+`
+
+
 const Right = styled.div`
-    width: 33.3%; 
+    flex: 1; 
 
 `
 const Center = styled.div`
-    width: 33.3%; 
+    flex: 1; 
 `
 
 function Navbar() {
     return (
         <Container>
             <Wrapper>
-            <Left>Tempor proident nulla ea cillum quis pariatur culpa ex do aute voluptate adipisicing. Deserunt culpa eu irure ex ullamco sit eiusmod eiusmod elit cupidatat sint. Cupidatat aute nisi duis sit nostrud cupidatat do ullamco laborum sit adipisicing excepteur labore ut. Commodo eiusmod ut consequat sunt nisi. Ad Lorem consequat adipisicing est irure. Adipisicing mollit reprehenderit consequat laborum consectetur aliqua enim amet consectetur aliquip ipsum proident id.</Left>
+            <Left>
+                <Language>
+                 EN
+                    </Language>
+                    </Left>
             <Center>Center</Center>
             <Right>Right</Right>
             </Wrapper>
