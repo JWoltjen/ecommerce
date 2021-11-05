@@ -1,6 +1,8 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@material-ui/icons'
 import React, {useState} from 'react'
 import styled from 'styled-components'
+import {sliderItems} from '../data'
+
 
 const Container = styled.div`
     width: 100%; 
@@ -13,7 +15,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
     height: 100%; 
     display: flex; 
-    transform: translateX(0vw)
+    transform: translateX(${props=>props.slideIndex * -100}vw)
 `
 
 const Slide = styled.div`
@@ -79,47 +81,30 @@ const Arrow = styled.div`
 function Slider() {
     const [slideIndex, setSlideIndex] = useState(0)
     const handleClick = (direction) => {
-
+        if(direction === "left"){
+            setSlideIndex(slideIndex > 0 ? slideIndex-1 : 2 )
+        } else {
+            setSlideIndex(slideIndex < 2 ? slideIndex+1 : 0 )
+        }
     }
     return (
         <Container>
             <Arrow direction="left" onClick={()=> handleClick('left')}>
                 <ArrowLeftOutlined/>    
             </Arrow>
-            <Wrapper>
-                <Slide bg="f5fafd">
+            <Wrapper slideIndex={slideIndex}>
+                    {sliderItems.map(item=>(
+                <Slide bg={item.bg}>
                     <ImageContainer>
-                        <Image src='https://i.ibb.co/XsdmR2c/1.png'/>
+                        <Image src={item.img}/>
                     </ImageContainer>
                     <InfoContainer>
-                        <Title>Summer Sale</Title>
-                        <Description>When it comes to your style, never compromise</Description>
+                        <Title>{item.title}</Title>
+                        <Description>{item.desc}</Description>
                         <Button>Pull the Trigger</Button>
                     </InfoContainer>
                 </Slide>
-
-                <Slide bg='fcf1ed'>
-                    <ImageContainer>
-                        <Image src='https://i.ibb.co/XsdmR2c/1.png'/>
-                    </ImageContainer>
-                    <InfoContainer>
-                        <Title>Winter Sale</Title>
-                        <Description>When it comes to your style, never compromise</Description>
-                        <Button>Pull the Trigger</Button>
-                    </InfoContainer>
-                </Slide>
-
-                <Slide bg='fbf0f4'>
-                    <ImageContainer>
-                        <Image src='https://i.ibb.co/XsdmR2c/1.png'/>
-                    </ImageContainer>
-                    <InfoContainer>
-                        <Title>Fall Sale</Title>
-                        <Description>When it comes to your style, never compromise</Description>
-                        <Button>Pull the Trigger</Button>
-                    </InfoContainer>
-                </Slide>
-
+                   ))}
             </Wrapper>
            <Arrow direction="right" onClick={()=>handleClick('right')}>
                <ArrowRightOutlined/>
