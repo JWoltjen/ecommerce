@@ -1,5 +1,5 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@material-ui/icons'
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -77,7 +77,7 @@ const Arrow = styled.div`
 `
 
 function Slider() {
-
+    const [slideIndex, setSlideIndex] = useState(0)
     const handleClick = (direction) => {
 
     }
