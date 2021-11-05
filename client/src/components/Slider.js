@@ -12,6 +12,8 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
     height: 100%; 
+    display: flex; 
+    transform: translateX(0vw)
 `
 
 const Slide = styled.div`
@@ -19,6 +21,7 @@ const Slide = styled.div`
     height: 100vh; 
     display: flex; 
     align-items: center; 
+    background-color: #${props=>props.bg}
 `
 
 const ImageContainer = styled.div`
@@ -69,17 +72,33 @@ const Arrow = styled.div`
     right:  ${props => props.direction === 'right' && '10px'}; 
     margin: auto; 
     cursor: pointer; 
-    opacity: 0.5
+    opacity: 0.5; 
+    z-index: 2; 
 `
 
 function Slider() {
+
+    const handleClick = (direction) => {
+
+    }
     return (
         <Container>
-            <Arrow direction="left">
+            <Arrow direction="left" onClick={()=> handleClick('left')}>
                 <ArrowLeftOutlined/>    
             </Arrow>
             <Wrapper>
-                <Slide>
+                <Slide bg="f5fafd">
+                    <ImageContainer>
+                        <Image src='https://i.ibb.co/XsdmR2c/1.png'/>
+                    </ImageContainer>
+                    <InfoContainer>
+                        <Title>Summer Sale</Title>
+                        <Description>When it comes to your style, never compromise</Description>
+                        <Button>Pull the Trigger</Button>
+                    </InfoContainer>
+                </Slide>
+
+                <Slide bg='fcf1ed'>
                     <ImageContainer>
                         <Image src='https://i.ibb.co/XsdmR2c/1.png'/>
                     </ImageContainer>
@@ -89,8 +108,20 @@ function Slider() {
                         <Button>Pull the Trigger</Button>
                     </InfoContainer>
                 </Slide>
+
+                <Slide bg='fbf0f4'>
+                    <ImageContainer>
+                        <Image src='https://i.ibb.co/XsdmR2c/1.png'/>
+                    </ImageContainer>
+                    <InfoContainer>
+                        <Title>Fall Sale</Title>
+                        <Description>When it comes to your style, never compromise</Description>
+                        <Button>Pull the Trigger</Button>
+                    </InfoContainer>
+                </Slide>
+
             </Wrapper>
-           <Arrow direction="right">
+           <Arrow direction="right" onClick={()=>handleClick('right')}>
                <ArrowRightOutlined/>
            </Arrow>
 
