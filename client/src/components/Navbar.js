@@ -30,6 +30,12 @@ const SearchContainer = styled.div`
     border: 1px solid lightgray; 
     display: flex; 
     align-items: center; 
+    margin-left: 25px; 
+    padding: 5px; 
+`
+
+const Input = styled.input`
+    border: none; 
 `
 
 const Right = styled.div`
@@ -49,7 +55,7 @@ function Navbar() {
                  EN
                 </Language>
             <SearchContainer>
-                Input
+                <Input/>
                 <Search/>
             </SearchContainer>
             </Left>
