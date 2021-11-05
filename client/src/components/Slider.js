@@ -6,9 +6,42 @@ const Container = styled.div`
     width: 100%; 
     height: 100vh; 
     display: flex; 
-    background-color: coral; 
     position: relative; 
     overflow: hidden; 
+`
+
+const Wrapper = styled.div`
+    height: 100%; 
+`
+
+const Slide = styled.div`
+    width: 100vw; 
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+`
+
+const ImageContainer = styled.div`
+    height: 100%; 
+    flex: 1; 
+`
+
+const InfoContainer = styled.div`
+    flex: 1; 
+    padding: 50px; 
+`
+
+const Title = styled.h1`
+
+`
+
+const Description = styled.p``
+
+const Button = styled.button``
+
+const Image = styled.img`
+    height: 80%; 
+
 `
 
 const Arrow = styled.div`
@@ -25,6 +58,8 @@ const Arrow = styled.div`
     left: ${props => props.direction === 'left' && '10px'}; 
     right:  ${props => props.direction === 'right' && '10px'}; 
     margin: auto; 
+    cursor: pointer; 
+    opacity: 0.5
 `
 
 function Slider() {
@@ -33,6 +68,18 @@ function Slider() {
             <Arrow direction="left">
                 <ArrowLeftOutlined/>    
             </Arrow>
+            <Wrapper>
+                <Slide>
+                    <ImageContainer>
+                        <Image src='https://i.ibb.co/XsdmR2c/1.png'/>
+                    </ImageContainer>
+                    <InfoContainer>
+                        <Title></Title>
+                        <Description></Description>
+                        <Button></Button>
+                    </InfoContainer>
+                </Slide>
+            </Wrapper>
            <Arrow direction="right">
                <ArrowRightOutlined/>
            </Arrow>
