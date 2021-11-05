@@ -42,8 +42,19 @@ const Right = styled.div`
     flex: 1; 
 
 `
+
+const Logo = styled.h1`
+    font-weight: bold; 
+`
+
 const Center = styled.div`
     flex: 1; 
+    text-align: center; 
+`
+
+const MenuItem = styled.div`
+    font-size: 14px; 
+    cursor: pointer; 
 `
 
 function Navbar() {
@@ -59,8 +70,12 @@ function Navbar() {
                 <Search/>
             </SearchContainer>
             </Left>
-            <Center>Center</Center>
-            <Right>Right</Right>
+            <Center><Logo>JCommerce</Logo></Center>
+            <Right>
+                <MenuItem>
+                    Register
+                </MenuItem>
+            </Right>
             </Wrapper>
         </Container>
     )
