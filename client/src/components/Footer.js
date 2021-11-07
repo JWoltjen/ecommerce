@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Pinterest, Twitter } from '@material-ui/icons'
+import { Facebook, Instagram, Mail, Phone, Pinterest, Room, Twitter } from '@material-ui/icons'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -63,6 +63,16 @@ const SocialIcon = styled.div`
     margin-right: 20px; 
 `
 
+const ContactItem = styled.div`
+    margin-bottom: 20px;
+    display: flex; 
+    align-items: center; 
+`
+
+const Payment = styled.img`
+    width: 50%;
+`
+
 function Footer() {
     return (
         <Container>
@@ -106,7 +116,20 @@ function Footer() {
                 </List>
             </Center>
             <Right>
-
+                <Title>Contact</Title>
+                <ContactItem>
+                    <Room style={{marginRight:"10px"}}/>
+                    1600 Pennslyvania Avenue, Washington, D.C.
+                </ContactItem>
+                <ContactItem>
+                    <Phone style={{marginRight:"10px"}}/>
+                    +1 913-944-9984
+                </ContactItem>
+                <ContactItem>
+                    <Mail style={{marginRight:"10px"}}/>
+                    Jeff.Woltjen@gmail.com
+                </ContactItem>
+                <Payment src='https://i.ibb.co/Qfvn4z6/payment.png'/>
             </Right>
         </Container>
     )
