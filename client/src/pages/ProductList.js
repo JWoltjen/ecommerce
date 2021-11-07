@@ -22,6 +22,19 @@ const Filter = styled.div`
     margin: 20px; 
 `
 
+const FilterText = styled.span`
+    font-size: 20px; 
+    font-weight: 600; 
+`
+
+const Select = styled.select`
+
+`
+
+const Option = styled.option`
+
+`
+
 function ProductList() {
     return (
         <Container>
@@ -32,10 +45,22 @@ function ProductList() {
             </Title>
             <FilterContainer>
                 <Filter>
-                    Filter1
+                    <FilterText>Filter Products</FilterText>
+                    <Select>
+                        <Option disabled selected>
+                            Color
+                        </Option>
+                        <Option>White</Option>
+                        <Option>Black</Option>
+                        <Option>Red</Option>
+                        <Option>Blue</Option>
+                        <Option>Yellow</Option>
+                        <Option>Green</Option>
+                    </Select>
                 </Filter>
                 <Filter>
-                    Filter2
+                    <FilterText>Sort Products</FilterText>
+
                 </Filter>
             </FilterContainer>
             <Products/>
