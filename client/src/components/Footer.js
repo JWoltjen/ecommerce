@@ -16,8 +16,7 @@ const Center = styled.div`
     flex: 1;
     padding: 20px; 
 `
-
-
+ 
 const Right = styled.div`
     flex: 1; 
     padding: 20px; 
@@ -29,6 +28,23 @@ const Logo = styled.h1`
 
 const Description = styled.p`
     margin: 20px 0px; 
+`
+
+const Title = styled.h3`
+margin-bottom: 30px; 
+`
+
+const List = styled.ul`
+    margin: 0; 
+    padding: 0; 
+    list-style: none; 
+    display: flex; 
+    flex-wrap: wrap; 
+`
+
+const ListItem = styled.li`
+    width: 50%;
+    margin-bottom: 10px; 
 `
 
 
@@ -73,7 +89,21 @@ function Footer() {
                 </SocialContainer>
             </Left>
             <Center>
-
+                <Title>Useful Links</Title>
+                <List>
+                    <ListItem>Home</ListItem>
+                    <ListItem>Cart</ListItem>
+                    <ListItem>Men's Fashion</ListItem>
+                    <ListItem>Women's Fashion</ListItem>
+                    <ListItem>Accessories</ListItem>
+                    <ListItem>My Account</ListItem>
+                    <ListItem>Order Tracking</ListItem>
+                    <ListItem>Terms</ListItem>
+                    <ListItem>High Explosives</ListItem>
+                    <ListItem>Armored Vehicles</ListItem>        
+                    <ListItem>Robot Insurance</ListItem>
+                    <ListItem>Thetan Reading</ListItem>        
+                </List>
             </Center>
             <Right>
 
