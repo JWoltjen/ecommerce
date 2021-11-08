@@ -118,8 +118,19 @@ const Hr = styled.hr`
     height: 1px; 
 `
 
-const Summary = styled.div``; 
+const Summary = styled.div`
+        flex: 1; 
+        border: 0.5px solid lightgray; 
+        border-radius: 10px; 
+        padding: 20px; 
+`; 
 
+
+const SummaryTitle = styled.h1``; 
+const SummaryItem = styled.div``; 
+const SummaryItemText = styled.span``; 
+const SummaryItemPrice = styled.span``; 
+const SummaryButton = styled.button``; 
 
 function Cart() {
     return (
@@ -137,7 +148,6 @@ function Cart() {
                 <TopButton type="filled">CHECKOUT NOW</TopButton>
                 </Top>
 
- 
                 <Bottom>
                     <Info>
                         <Product>
@@ -183,6 +193,26 @@ function Cart() {
                         </Product>
 
                     </Info>
+                    <Summary>
+                        <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+                        <SummaryItem>
+                            <SummaryItemText>Subtotal</SummaryItemText>
+                            <SummaryItemPrice>$ 60</SummaryItemPrice>
+                        </SummaryItem>
+                        <SummaryItem>
+                            <SummaryItemText>Estimated Shipping</SummaryItemText>
+                            <SummaryItemPrice>$ 7.55</SummaryItemPrice>
+                        </SummaryItem>
+                        <SummaryItem>
+                            <SummaryItemText>Shipping Discount</SummaryItemText>
+                            <SummaryItemPrice>- $ 7.55</SummaryItemPrice>
+                        </SummaryItem>
+                        <SummaryItem>
+                            <SummaryItemText type="total">Total</SummaryItemText>
+                            <SummaryItemPrice>$ 60</SummaryItemPrice>
+                        </SummaryItem>
+                        <SummaryButton>Checkout</SummaryButton>
+                    </Summary>
                 </Bottom>
             </Wrapper>
             <Footer/>
