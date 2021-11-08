@@ -140,7 +140,13 @@ const SummaryItem = styled.div`
 
 const SummaryItemText = styled.span``; 
 const SummaryItemPrice = styled.span``; 
-const SummaryButton = styled.button``; 
+const SummaryButton = styled.button`
+    width: 100%; 
+    padding: 10px; 
+    background-color: black; 
+    color: white; 
+    font-weight: 600; 
+`; 
 
 function Cart() {
     return (
