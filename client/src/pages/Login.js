@@ -64,6 +64,8 @@ function Login() {
                     <Input placeholder="username"/>
                     <Input placeholder="password"/>
                     <Button>LOGIN</Button>
+                    <Link>Forgot account name?</Link>
+                    <Link>Forgot password?</Link>
                 </Form>
             </Wrapper>
 
