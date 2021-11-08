@@ -63,15 +63,30 @@ const ProductDetail = styled.div`
         display: flex; 
 `
 
-const Image = styled.img``
+const Image = styled.img`
+    width: 200px; 
 
-const Details = styled.p``
+`
+
+const Details = styled.p`
+    padding: 20px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-around; 
+`
 
 const ProductName = styled.span``
 
 const ProductId = styled.span``
 
-const ProductColor = styled.div``; 
+const ProductColor = styled.div`
+    width: 20px; 
+    height: 20px; 
+    border-radius: 50%; 
+    background-color: ${props=>props.color}; 
+`; 
+
+
 const ProductSize = styled.span``; 
 
 const PriceDetail = styled.div`
@@ -106,7 +121,7 @@ function Cart() {
                                 <Details>
                                     <ProductName><b>Product:</b>Hodor Shoes</ProductName>
                                     <ProductId><b>ID:</b>09895612</ProductId>
-                                    <ProductColor></ProductColor>
+                                    <ProductColor color="black"></ProductColor>
                                     <ProductSize><b>Size:</b>37.5</ProductSize>
                                 </Details>
                             </ProductDetail>
