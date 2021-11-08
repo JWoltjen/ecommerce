@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Announcement from '../components/Announcement'
+import { Add, Remove } from '@material-ui/icons'
 
 const Container = styled.div`
 
@@ -91,7 +92,31 @@ const ProductSize = styled.span``;
 
 const PriceDetail = styled.div`
         flex: 1; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        flex-direction: column; 
 `; 
+
+const ProductAmountContainer = styled.div`
+        display: flex; 
+        align-items: center; 
+        margin-bottom: 20px; 
+`
+const ProductAmount = styled.div`
+        font-size: 24px; 
+        margin: 5px; 
+`
+const ProductPrice = styled.div`
+        font-size: 30px; 
+        font-weight: 200; 
+`
+
+const Hr = styled.hr`
+    background-color: #eee; 
+    border: none; 
+    height: 1px; 
+`
 
 const Summary = styled.div``; 
 
@@ -125,10 +150,38 @@ function Cart() {
                                     <ProductSize><b>Size:</b>37.5</ProductSize>
                                 </Details>
                             </ProductDetail>
+                                    <ProductAmountContainer>
+                                        <Add/>
+                                            <ProductAmount>2</ProductAmount>
+                                        <Remove/>
+                                    </ProductAmountContainer>
+                                    <ProductPrice> </ProductPrice>
                             <PriceDetail>
                                 Price Detail
                             </PriceDetail>
                         </Product>
+                        <Hr/>
+                        <Product>
+                            <ProductDetail>
+                                <Image src="https://i.pinimg.com/originals/2d/af/f8/2daff8e0823e51dd752704a47d5b795c.png"/>
+                                <Details>
+                                    <ProductName><b>Product:</b>Hodor Shirt</ProductName>
+                                    <ProductId><b>ID:</b>09895612</ProductId>
+                                    <ProductColor color="black"></ProductColor>
+                                    <ProductSize><b>Size:</b>37.5</ProductSize>
+                                </Details>
+                            </ProductDetail>
+                                    <ProductAmountContainer>
+                                        <Add/>
+                                            <ProductAmount>1</ProductAmount>
+                                        <Remove/>
+                                    </ProductAmountContainer>
+                                    <ProductPrice> </ProductPrice>
+                            <PriceDetail>
+                                Price Detail
+                            </PriceDetail>
+                        </Product>
+
                     </Info>
                 </Bottom>
             </Wrapper>
