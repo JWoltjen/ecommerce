@@ -44,7 +44,41 @@ const TopText = styled.span`
     margin: 0px 10px; 
 `
 
-const Bottom = styled.div``
+const Bottom = styled.div`
+    display: flex; 
+    justify-content: space-between; 
+`
+
+const Info = styled.div`
+    flex: 3; 
+`
+
+const Product = styled.div`
+        display: flex; 
+        justify-content: space-between; 
+`
+
+const ProductDetail = styled.div`
+        flex: 2; 
+        display: flex; 
+`
+
+const Image = styled.img``
+
+const Details = styled.p``
+
+const ProductName = styled.span``
+
+const ProductId = styled.span``
+
+const ProductColor = styled.div``; 
+const ProductSize = styled.span``; 
+
+const PriceDetail = styled.div`
+        flex: 1; 
+`; 
+
+const Summary = styled.div``; 
 
 
 function Cart() {
@@ -63,9 +97,24 @@ function Cart() {
                 <TopButton type="filled">CHECKOUT NOW</TopButton>
                 </Top>
 
-
+ 
                 <Bottom>
-
+                    <Info>
+                        <Product>
+                            <ProductDetail>
+                                <Image src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1614188818-TD1MTHU_SHOE_ANGLE_GLOBAL_MENS_TREE_DASHERS_THUNDER_b01b1013-cd8d-48e7-bed9-52db26515dc4.png?crop=1xw:1.00xh;center,top&resize=480%3A%2A"/>
+                                <Details>
+                                    <ProductName><b>Product:</b>Hodor Shoes</ProductName>
+                                    <ProductId><b>ID:</b>09895612</ProductId>
+                                    <ProductColor></ProductColor>
+                                    <ProductSize><b>Size:</b>37.5</ProductSize>
+                                </Details>
+                            </ProductDetail>
+                            <PriceDetail>
+                                Price Detail
+                            </PriceDetail>
+                        </Product>
+                    </Info>
                 </Bottom>
             </Wrapper>
             <Footer/>
