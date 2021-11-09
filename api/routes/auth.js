@@ -44,7 +44,9 @@ router.post("/login", async (req, res) => {
 
         if(inputPassword != req.body.password){
             res.status(401).json("Wrong user name or password"); 
-            console.log(`${inputPassword} is the wrong password for ${hashedPassword}`)
+
+            const {inputPassword, ...others} = user._doc; 
+
         } else {
             res.status(200).json(user)
         }
