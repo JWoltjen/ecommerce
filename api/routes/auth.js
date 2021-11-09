@@ -40,13 +40,11 @@ router.post("/login", async (req, res) => {
             user.password, 
             process.env.PASS_SEC
         ); 
+        const inputPassword = hashedPassword.toString(CryptoJS.enc.Utf8)
 
-        const originalPassword = hashedPassword
-        const inputPassword = req.body.password; 
-
-        if(originalPassword != hashedPassword){
+        if(inputPassword != req.body.password){
             res.status(401).json("Wrong user name or password"); 
-            console.log(`${inputPassword} is the wrong password for ${originalPassword}`)
+            console.log(`${inputPassword} is the wrong password for ${hashedPassword}`)
         } else {
             res.status(200).json(user)
         }
