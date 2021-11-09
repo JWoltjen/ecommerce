@@ -32,19 +32,25 @@ router.post("/login", async (req, res) => {
             }
         ); 
 
-        !user && res.status(401).json("Wrong user name or password")
+       if (!user){
+            res.status(401).json("Wrong user name")
+       } 
 
         const hashedPassword = CryptoJS.AES.decrypt(
             user.password, 
             process.env.PASS_SEC
         ); 
 
-        const password = hashedPassword.toString(CryptoJS.enc.Utf8);  
+        const originalPassword = hashedPassword
+        const inputPassword = req.body.password; 
 
-        password !== req.body.password &&
+        if(originalPassword != hashedPassword){
             res.status(401).json("Wrong user name or password"); 
-            console.log("wrong username or password")
-            return
+            console.log(`${inputPassword} is the wrong password for ${originalPassword}`)
+        } else {
+            res.status(200).json(user)
+        }
+        
     } catch(err){
         console.log(err)
         return; 
