@@ -13,10 +13,9 @@ router.post("/register", async (req, res) => {
             process.env.PASS_SEC
         ).toString(), 
     });
-
     try{
         const savedUser = await newUser.save()
-        res.status(200).json()
+        res.status(200).json(savedUser)
     }  catch(err){ 
         console.log(err)
         return
@@ -35,6 +34,7 @@ router.post("/login", async (req, res) => {
 
        if (!user){
             res.status(401).json("Wrong user name")
+            return; 
        } 
 
         const hashedPassword = CryptoJS.AES.decrypt(
