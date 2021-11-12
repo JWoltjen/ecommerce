@@ -4,6 +4,9 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Newsletter from '../components/Newsletter'
 import Products from '../components/Products'
+import { useLocation } from 'react-router'
+import React, {useState} from 'react'
+import { red } from '@material-ui/core/colors'
 
 const Container = styled.div`
 
@@ -38,6 +41,17 @@ const Option = styled.option`
 `
 
 function ProductList() {
+    const location = useLocation(); 
+    const category = location.pathname.split("/")[2]
+    const [filter, setFilters] = useState({})
+
+    const handleFilters = (e) => {
+        const value = e.target.value; 
+        setFilters({
+            [e.target.name]: value
+        })
+    }
+    console.log(filter.color)
     return (
         <Container>
             <Navbar/>
@@ -48,8 +62,8 @@ function ProductList() {
             <FilterContainer>
                 <Filter>
                     <FilterText>Filter Products</FilterText>
-                    <Select>
-                        <Option disabled selected>
+                    <Select name="color" onChange={handleFilters}>
+                        <Option disabled>
                             Color
                         </Option>
                         <Option>White</Option>
@@ -59,8 +73,8 @@ function ProductList() {
                         <Option>Yellow</Option>
                         <Option>Green</Option>
                     </Select>
-                    <Select>
-                        <Option disabled selected>
+                    <Select name='size' onChange={handleFilters}>
+                        <Option disabled>
                             Size
                         </Option>
                         <Option>XS</Option>
@@ -73,7 +87,7 @@ function ProductList() {
                 </Filter>
                 <Filter>
                     <FilterText>Sort Products</FilterText>
-                    <Select>
+                    <Select onChange={handleFilters}>
                         <Option selected>Newest</Option>
                         <Option>Price (asc)</Option>
                         <Option>Price (desc)</Option>
