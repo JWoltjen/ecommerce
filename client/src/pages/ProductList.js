@@ -1,4 +1,4 @@
-import { Announcement } from '@material-ui/icons'
+import { AirlineSeatIndividualSuiteSharp, Announcement, FilterSharp } from '@material-ui/icons'
 import styled from 'styled-components'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
@@ -42,16 +42,17 @@ const Option = styled.option`
 
 function ProductList() {
     const location = useLocation(); 
-    const category = location.pathname.split("/")[2]
-    const [filter, setFilters] = useState({})
+    const cat = location.pathname.split("/")[2]
+    const [filters, setFilters] = useState({})
+    const [sort, setSort] = useState("newest")
 
     const handleFilters = (e) => {
         const value = e.target.value; 
         setFilters({
+            ...filters,
             [e.target.name]: value
         })
     }
-    console.log(filter.color)
     return (
         <Container>
             <Navbar/>
@@ -87,14 +88,14 @@ function ProductList() {
                 </Filter>
                 <Filter>
                     <FilterText>Sort Products</FilterText>
-                    <Select onChange={handleFilters}>
-                        <Option selected>Newest</Option>
-                        <Option>Price (asc)</Option>
-                        <Option>Price (desc)</Option>
+                    <Select onChange={e=>setSort(e.target.value)}>
+                        <Option value="newest">Newest</Option>
+                        <Option value="asc">Price (asc)</Option>
+                        <Option value="desc">Price (desc)</Option>
                     </Select>
                 </Filter>
             </FilterContainer>
-            <Products/>
+            <Products cat={cat} filters={filters} sort={sort}/>
             <Newsletter/>
             <Footer/>
         </Container>
