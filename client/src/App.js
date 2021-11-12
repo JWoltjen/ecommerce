@@ -5,11 +5,17 @@ import ProductList from './pages/ProductList';
 import Register from './pages/Register'
 import Login from './pages/Login'
 import Cart from './pages/Cart'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 function App() {
   return (
-    
-     <Cart/>
+    <Router>
+      <Switch>
+        <Route path="/">
+          <Home/>
+        </Route>
+      </Switch>
+    </Router>
    
   );
 }
