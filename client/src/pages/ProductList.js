@@ -58,7 +58,7 @@ function ProductList() {
             <Navbar/>
             <Announcement/>
             <Title>
-                Dresses
+               {cat}
             </Title>
             <FilterContainer>
                 <Filter>
