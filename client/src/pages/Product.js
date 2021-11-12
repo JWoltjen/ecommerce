@@ -1,10 +1,13 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import Footer from '../components/Footer'
 import Announcement from '../components/Announcement'
 import Navbar from '../components/Navbar'
 import Newsletter from '../components/Newsletter'
 import { Add, Remove } from "@material-ui/icons";
+import {useLocation} from 'react-router-dom'
+import axios from 'axios'
+import { publicRequest } from './requestMethods'
  
 const Container = styled.div`
 
@@ -114,6 +117,19 @@ const Button = styled.button`
 `
 
 function Product() {
+    const location = useLocation(); 
+    const id = location.pathname.split("/")[2]
+    const [product, setProduct] = useState({}); 
+
+    useEffect(() => {
+        const getProduct = async () => {
+            try {
+                const res = publicRequest
+            } catch (error) {
+                
+            }
+        }
+    }, [id])
     return (
         <Container>
             <Navbar/>
